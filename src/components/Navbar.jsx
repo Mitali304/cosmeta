@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import SearchBar from "./Searchbar"; // Ensure you have this component for the search bar
+import SearchBar from "./SearchBar"; // Ensure you have this component for the search bar
 
 const Navbar = ({ searchQuery, setSearchQuery }) => {
   const [isSearchOpen, setSearchOpen] = useState(false);
