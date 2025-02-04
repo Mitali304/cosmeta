@@ -1,10 +1,10 @@
 import React from 'react'
-import Hero from '../compnents/Hero'
-import Bestsellers from '../compnents/Bestsellers'
-import Ourpolicy from '../compnents/Ourpolicy'
-import NewsletterBox from '../compnents/NewsletterBox'
-import Footer from '../compnents/footer'
-import Categories from '../compnents/Categories'
+import Hero from '../components/Hero'
+import Bestsellers from '../components/Bestsellers'
+import Ourpolicy from '../components/Ourpolicy'
+import NewsletterBox from '../components/NewsletterBox'
+import Footer from '../components/footer'
+import Categories from '../components/Categories'
 
 const Home = () => {
   return (

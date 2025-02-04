@@ -9,14 +9,14 @@ import Cart from './pages/cart';
 import Login from './pages/login';
 import Placeorder from './pages/placeorder';
 import Orders from './pages/orders';
-import Navbar from './compnents/Navbar';
-import Skincare from './compnents/Skincare';
-import Makeup from './compnents/makeup';
-import HairCare from './compnents/Haircare';
-import BodyCare from './compnents/Bodycare';
-import Fragrance from './compnents/Fragrance';
-import Mens from './compnents/Mens '; // Corrected path
-import Bestsellers from './compnents/Bestsellers';
+import Navbar from './components/Navbar';
+import Skincare from './components/Skincare';
+import Makeup from './components/makeup';
+import HairCare from './components/Haircare';
+import BodyCare from './components/Bodycare';
+import Fragrance from './components/Fragrance';
+import Mens from './components/Mens '; // Corrected path
+import Bestsellers from './components/Bestsellers';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
