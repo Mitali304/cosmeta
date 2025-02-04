@@ -3,7 +3,7 @@ import Hero from '../components/Hero'
 import Bestsellers from '../components/Bestsellers'
 import Ourpolicy from '../components/Ourpolicy'
 import NewsletterBox from '../components/NewsletterBox'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 import Categories from '../components/Categories'
 
 const Home = () => {
