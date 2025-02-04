@@ -12,8 +12,8 @@ import Orders from './pages/Orders';
 import Navbar from './components/Navbar';
 import Skincare from './components/Skincare';
 import Makeup from './components/Makeup';
-import HairCare from './components/Haircare';
-import BodyCare from './components/Bodycare';
+import HairCare from './components/HairCare';
+import BodyCare from './components/BodyCare';
 import Fragrance from './components/Fragrance';
 import Mens from './components/Mens '; // Corrected path
 import Bestsellers from './components/Bestsellers';
