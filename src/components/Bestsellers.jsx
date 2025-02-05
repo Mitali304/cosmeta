@@ -16,7 +16,7 @@ const Bestsellers = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-1">
+    <div className=" py-1">
       <div className="my-10">
         {/* Title Section */}
         <div className="text-center py-10">

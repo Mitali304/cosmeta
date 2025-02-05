@@ -19,8 +19,8 @@ const Categories = () => {
   };
 
   return (
-    <div className="bg-gray-50">
-      <nav className="relative">
+    <div className="">
+      <nav className="relative border border-gray-400 rounded-lg mt-2 ml-1 mr-1">
         {/* Button for smaller screens */}
         <button
           className="md:hidden block w-full text-left px-4 py-2 bg-gray-100 text-gray-700 font-bold border-b border-gray-300"
@@ -28,14 +28,14 @@ const Categories = () => {
         >
           Categories
         </button>
-
+  
         {/* Loading Animation */}
         {isLoading && (
-          <div className="fixed inset-0 flex justify-center items-center bg-white  z-50">
+          <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
             <img src="/images/gi.gif" alt="Loading..." className="w-20 h-20" />
           </div>
         )}
-
+  
         {/* Dropdown or Horizontal List */}
         <ul
           style={isDropdownOpen || window.innerWidth >= 768 ? styles.navList : { display: 'none' }}
@@ -75,6 +75,8 @@ const Categories = () => {
       </nav>
     </div>
   );
+  
+
 };
 
 const styles = {

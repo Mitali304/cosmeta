@@ -8,6 +8,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
+    
     <div
       style={{
         ...styles.card,

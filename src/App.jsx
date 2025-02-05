@@ -18,6 +18,7 @@ import Fragrance from './components/Fragrance';
 import Mens from './components/Mens '; // Corrected path
 import Bestsellers from './components/Bestsellers';
 
+
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/fragrance" element={<Fragrance searchQuery={searchQuery} />} />
         <Route path="/mens" element={<Mens searchQuery={searchQuery} />} />
         <Route path="/bestsellers" element={<Bestsellers searchQuery={searchQuery} />} />
+      
         
       </Routes>
     </div>

@@ -2,7 +2,9 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className='flex flex-col sm:flex-row border border-gray-400'>
+    <div className='flex flex-col sm:flex-row border border-gray-400 rounded-2xl'>
+
+
       {/* Hero left */}
       <div className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'>
         <div
@@ -24,15 +26,15 @@ const Hero = () => {
           </div>
         </div>
       </div>
+{/* Hero right */}
+<div className='w-full sm:w-1/2 flex items-center justify-center'>
+  <img
+    src='/images/h1.jpeg'
+    className='w-full h-[60vh] object-cover rounded-r-2xl'
+    alt='Hero Image'
+  />
+</div>
 
-      {/* Hero right */}
-      <div className='w-full sm:w-1/2 flex items-center justify-center'>
-        <img
-          src='/images/h1.jpeg'
-          className='w-full h-[60vh] object-cover'
-          alt='Hero Image'
-        />
-      </div>
 
       {/* Keyframes for animation */}
       <style jsx>{`
