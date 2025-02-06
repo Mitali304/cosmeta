@@ -112,10 +112,10 @@ const Collection = ({ searchQuery }) => {
                   }
                 >
                   <option value="">Select</option>
-                  <option value="0-25">$0 - $25</option>
-                  <option value="25-50">$25 - $50</option>
-                  <option value="50-100">$50 - $100</option>
-                  <option value="100-200">$100 - $200</option>
+                  <option value="0-100">₹0 - ₹100</option>
+                  <option value="100-500">₹100 - ₹500</option>
+                  <option value="500-1000">₹500 - ₹1000</option>
+                  <option value="1000-2000">₹1000 - ₹2000</option>
                 </select>
               </div>
 

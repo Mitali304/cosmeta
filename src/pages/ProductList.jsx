@@ -99,7 +99,7 @@ const ProductList = ({ selectedFilters, searchQuery }) => {
               {/* Product Name, Price, and Rating */}
               <div className="text-center">
                 <h3 className="font-semibold">{product.name}</h3>
-                <p className="font-semibold text-red-500">${product.price}</p>
+                <p className="font-semibold text-red-500">{`₹${product.price}`}</p>
 
                 {/* Rating */}
                 <div className="flex justify-center">

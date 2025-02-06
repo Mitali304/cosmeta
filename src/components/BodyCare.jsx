@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const categories = ["All", "Face Wash", "Serum", "Scrub", "Moisturizer", "Toner", "Face Pack","Sunscreen"];
+const categories = ["All", "Body Wash", "Lotion", "Scrub", "Body Mist","Sunscreen"];
 
 const BodyCare = ({ searchQuery }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -10,21 +10,21 @@ const BodyCare = ({ searchQuery }) => {
   const navigate = useNavigate();
 
   const skincareProducts = [
-    { id: 1, name: "Ozone D-Tan Face Pack", price: 220, category: "Face Pack", images: ["/skin/p1.jpg"] },
-    { id: 2, name: "Krivety Rice Toner", price: 225, category: "Toner", images: ["/skin/p2.jpg"] },
-    { id: 3, name: "COSRX Snail Mucin Serum", price: 969, category: "Serum", images: ["/skin/p3.jpg"] },
-    { id: 4, name: "Moody Face Mist & Toner", price: 212, category: "Toner", images: ["/skin/p4.jpg"] },
-    { id: 5, name: "Moody Sunscreen", price: 348, category: "Sunscreen", images: ["/skin/p5.jpg"] },
-    { id: 6, name: "DOT & KEY Moisturizer", price: 295, category: "Moisturizer", images: ["/skin/p6.jpg"] },
-    { id: 7, name: "Anua Peach Serum", price: 1624, category: "Serum", images: ["/skin/p7.jpg"] },
-    { id: 8, name: "The Face Shop Face Wash", price: 569, category: "Face Wash", images: ["/skin/p8.jpg"] },
-    { id: 9, name: "COSRX 6X Toner Serum", price: 1493, category: "Serum", images: ["/skin/p9.jpg"] },
-    { id: 10, name: "Mamaearth Face Wash", price: 215, category: "Face Wash", images: ["/skin/p10.jpg"] },
-    { id: 11, name: "Biotique Face Wash", price: 185, category: "Face Wash", images: ["/skin/p11.jpg"] },
-    { id: 12, name: "Joy Face Scrub", price: 195, category: "Scrub", images: ["/skin/p12.jpg"] },
-    { id: 13, name: "Himalaya Moisturizer", price: 147, category: "Moisturizer", images: ["/skin/p13.jpg"] },
-    { id: 14, name: "Nat Habit Moisturiser", price: 357, category: "Moisturizer", images: ["/skin/p14.jpg"] },
-    { id: 15, name: "Himalaya Coffee Face Pack", price: 225, category: "Face Pack", images: ["/skin/p15.jpg"] },
+    { id: 1, name: "Vaseline Cocoa Glow Serum In Lotion", price: 299, category: "Lotion", images: ["/body/p1.jpg"] },
+    { id: 2, name: "Fiama Body Wash Shower Gel ", price: 115, category: "Body Wash", images: ["/body/p2.jpg"] },
+    { id: 3, name: "Dove Body Polish Exfoliating Scrub", price: 535, category: "Scrub", images: ["/body/p3.jpg"] },
+    { id: 4, name: "ITARI Women Crush Body Mist", price: 359, category: "Body Mist", images: ["/body/p4.jpg"] },
+    { id: 5, name: "Joy Sunscreen Body Lotion", price: 199, category: "Sunscreen", images: ["/body/p5.jpg"] },
+    { id: 6, name: "Mamaearth Rice Water Hydrating Body Lotion", price: 304, category: "Lotion", images: ["/body/p6.jpg"] },
+    { id: 7, name: "Dove Dryness Care Bodywash ", price: 395, category: "Body Wash", images: ["/body/p7.jpg"] },
+    { id: 8, name: "NIVEA Body Lotion Natural Glow, Cell Repair", price: 358, category: "Lotion", images: ["/body/p8.jpg"] },
+    { id: 9, name: "mCaffeine Exfoliating Coffee Body Scrub", price: 359, category: "Scrub", images: ["/body/p9.jpg"] },
+    { id: 10, name: "RENEE Bohemian Zest Body Mist", price: 307, category: "Body Mist", images: ["/body/p10.jpg"] },
+    { id: 11, name: "Dove Soothing Rose & Aloe Vera Body Wash", price: 359, category: "Body Wash", images: ["/body/p11.jpg"] },
+    { id: 12, name: "Gracellon Almond Shea Butter Body Scrub", price: 220, category: "Scrub", images: ["/body/p12.jpg"] },
+    { id: 13, name: "Princess by RENEE Disney Moana Body Mist", price: 412, category: "Body Mist", images: ["/body/p13.jpg"] },
+    { id: 14, name: "Dove Glow Recharge Serum Body Wash", price: 487, category: "Body Wash", images: ["/body/p14.jpg"] },
+    { id: 15, name: "Vaseline Sun Protect SPF 30 Body Lotion", price: 365, category: "Sunscreenn", images: ["/body/p15.jpg"] },
   ];
 
   // ✅ Logging for debugging
@@ -95,7 +95,7 @@ const BodyCare = ({ searchQuery }) => {
           <div style={styles.titleContainer}>
             <div style={styles.line}></div>
             <h2 className="prata-regular text-3xl font-semibold text-gray-800">
-              -- SKINCARE PRODUCTS --
+              -- BODYCARE PRODUCTS --
             </h2>
             <div style={styles.line}></div>
           </div>

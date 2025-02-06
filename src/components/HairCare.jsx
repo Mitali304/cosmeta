@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const categories = ["All", "Face Wash", "Serum", "Scrub", "Moisturizer", "Toner", "Face Pack","Sunscreen"];
+const categories = ["All", "Shampoo", "Serum", "Hair Oil", "Hair mask", "Conditioner"];
 
 const HairCare = ({ searchQuery }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -10,21 +10,21 @@ const HairCare = ({ searchQuery }) => {
   const navigate = useNavigate();
 
   const skincareProducts = [
-    { id: 1, name: "Ozone D-Tan Face Pack", price: 220, category: "Face Pack", images: ["/skin/p1.jpg"] },
-    { id: 2, name: "Krivety Rice Toner", price: 225, category: "Toner", images: ["/skin/p2.jpg"] },
-    { id: 3, name: "COSRX Snail Mucin Serum", price: 969, category: "Serum", images: ["/skin/p3.jpg"] },
-    { id: 4, name: "Moody Face Mist & Toner", price: 212, category: "Toner", images: ["/skin/p4.jpg"] },
-    { id: 5, name: "Moody Sunscreen", price: 348, category: "Sunscreen", images: ["/skin/p5.jpg"] },
-    { id: 6, name: "DOT & KEY Moisturizer", price: 295, category: "Moisturizer", images: ["/skin/p6.jpg"] },
-    { id: 7, name: "Anua Peach Serum", price: 1624, category: "Serum", images: ["/skin/p7.jpg"] },
-    { id: 8, name: "The Face Shop Face Wash", price: 569, category: "Face Wash", images: ["/skin/p8.jpg"] },
-    { id: 9, name: "COSRX 6X Toner Serum", price: 1493, category: "Serum", images: ["/skin/p9.jpg"] },
-    { id: 10, name: "Mamaearth Face Wash", price: 215, category: "Face Wash", images: ["/skin/p10.jpg"] },
-    { id: 11, name: "Biotique Face Wash", price: 185, category: "Face Wash", images: ["/skin/p11.jpg"] },
-    { id: 12, name: "Joy Face Scrub", price: 195, category: "Scrub", images: ["/skin/p12.jpg"] },
-    { id: 13, name: "Himalaya Moisturizer", price: 147, category: "Moisturizer", images: ["/skin/p13.jpg"] },
-    { id: 14, name: "Nat Habit Moisturiser", price: 357, category: "Moisturizer", images: ["/skin/p14.jpg"] },
-    { id: 15, name: "Himalaya Coffee Face Pack", price: 225, category: "Face Pack", images: ["/skin/p15.jpg"] },
+    { id: 1, name: "Bare Anatomy Anti Dandruff Shampoo", price: 339, category: "Shampoo", images: ["/hair/p1.jpg"] },
+    { id: 2, name: "Bajaj Almond Drops Hair Oil", price: 341, category: "Hair Oil", images: ["/hair/p2.jpg"] },
+    { id: 3, name: "Streax Hair smoothing Serum 115ml", price: 259, category: "Serum", images: ["/hair/p3.jpg"] },
+    { id: 4, name: "Bare Anatomy Ultra Smoothing Hair Mask ", price: 539, category: "Hair mask", images: ["/hair/p4.jpg"] },
+    { id: 5, name: "Parachute Jasmine Gold Coconut Hair Oil", price: 149, category: "Hair Oil", images: ["/hair/p5.jpg"] },
+    { id: 6, name: "TRESemme Gloss Ultimate Hair Serum", price: 395, category: "Serum", images: ["/hair/p6.jpg"] },
+    { id: 7, name: "Khadi Natural Rosemary & Henna Hair Oil,", price: 349, category: "Hair Oil", images: ["/hair/p7.jpg"] },
+    { id: 8, name: "Indulekha Bringha Shampoo", price: 405, category: "Shampoo", images: ["/hair/p8.jpg"] },
+    { id: 9, name: "Biotique Argan Oil Hair Mask", price: 140, category: "Hair mask", images: ["/hair/p9.jpg"] },
+    { id: 10, name: "Dove Intense Repair Shampoo ", price: 719, category: "Shampoo", images: ["/hair/p10.jpg"] },
+    { id: 11, name: "Tresemme Hair Fall Defence Shampoo", price: 559, category: "Shampoo", images: ["/hair/p11.jpg"] },
+    { id: 12, name: "Dove Intense Repair Hair Conditioner", price: 195, category: "Conditioner", images: ["/hair/p12.jpg"] },
+    { id: 13, name: "L'Oreal Paris Serum, Protection and Shine", price: 357, category: "Serum", images: ["/hair/p13.jpg"] },
+    { id: 14, name: "TRESemme Keratin Smooth, Conditioner", price: 197, category: "Conditioner", images: ["/hair/p14.jpg"] },
+    { id: 15, name: "L'Oreal Paris Hyaluron Moisture ", price: 225, category: "Conditioner", images: ["/hair/p15.jpg"] },
   ];
 
   // ✅ Logging for debugging
@@ -95,7 +95,7 @@ const HairCare = ({ searchQuery }) => {
           <div style={styles.titleContainer}>
             <div style={styles.line}></div>
             <h2 className="prata-regular text-3xl font-semibold text-gray-800">
-              -- SKINCARE PRODUCTS --
+              -- HAIRCARE PRODUCTS --
             </h2>
             <div style={styles.line}></div>
           </div>

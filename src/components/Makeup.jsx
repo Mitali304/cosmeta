@@ -95,7 +95,7 @@ const Makeup= ({ searchQuery }) => {
           <div style={styles.titleContainer}>
             <div style={styles.line}></div>
             <h2 className="prata-regular text-3xl font-semibold text-gray-800">
-              -- SKINCARE PRODUCTS --
+              -- MAKEUP PRODUCTS --
             </h2>
             <div style={styles.line}></div>
           </div>

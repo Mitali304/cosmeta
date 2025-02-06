@@ -1,96 +1,125 @@
-import React, { useState } from "react";
-import modelFaceBefore from "/images/before.jpeg"; // Initial model face image
-import modelFaceAfter from "/images/after.jpeg"; // Placeholder for after-effect image
+import React, { useState } from 'react';
 
-const skincareRoutines = {
-  oily: [
-    { id: 1, name: "Cleanser", description: "Removes excess oil and cleans the skin.", effect: "cleansed",images: ["/images/bp1.jpg"] },
-    { id: 2, name: "Exfoliator", description: "Exfoliates dead skin cells to prevent clogging pores.", effect: "exfoliated" },
-    { id: 3, name: "Moisturizer", description: "Lightweight hydration to avoid excess oil.", effect: "moisturized" },
-  ],
-  dry: [
-    { id: 1, name: "Hydrating Cleanser", description: "Cleans without stripping moisture.", effect: "cleansed" },
-    { id: 2, name: "Exfoliator", description: "Gentle exfoliation to avoid dryness.", effect: "exfoliated" },
-    { id: 3, name: "Heavy Moisturizer", description: "Deep hydration for dry skin.", effect: "moisturized" },
-  ],
-  combination: [
-    { id: 1, name: "Gentle Cleanser", description: "Cleanses while balancing oil.", effect: "cleansed" },
-    { id: 2, name: "Exfoliator", description: "Exfoliates without over-drying.", effect: "exfoliated" },
-    { id: 3, name: "Light Moisturizer", description: "Balances hydration for combination skin.", effect: "moisturized" },
-  ],
-};
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-const SkincareGame = () => {
-  const [selectedSkinType, setSelectedSkinType] = useState(null);
-  const [appliedSteps, setAppliedSteps] = useState([]);
-
-  const handleSkinTypeSelect = (skinType) => {
-    setSelectedSkinType(skinType);
-    setAppliedSteps([]); // Reset applied steps when skin type is changed
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const applyStep = (step) => {
-    if (!appliedSteps.includes(step.effect)) {
-      setAppliedSteps([...appliedSteps, step.effect]);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission (e.g., send data to server)
+    alert('Thank you for reaching out! We will get back to you soon.');
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
   };
-
-  const isRoutineComplete = appliedSteps.length === (selectedSkinType ? skincareRoutines[selectedSkinType].length : 0);
 
   return (
-    <div className="flex flex-col items-center p-6 bg-blue-100 min-h-screen relative">
-      <h1 className="text-2xl font-bold mb-4">Skincare Routine Game</h1>
-      <p className="mb-4 text-gray-600">Select your skin type and follow the skincare routine!</p>
+    <div className="contact-container px-6 py-8">
+      <h1 className="text-3xl font-semibold text-center text-gray-800 mb-6">Get In Touch</h1>
 
-      {/* Skin Type Selection */}
-      <div className="mb-4">
-        <button
-          onClick={() => handleSkinTypeSelect("oily")}
-          className="p-3 rounded-lg bg-green-500 text-white hover:bg-green-600 mr-2"
-        >
-          Oily Skin
-        </button>
-        <button
-          onClick={() => handleSkinTypeSelect("dry")}
-          className="p-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 mr-2"
-        >
-          Dry Skin
-        </button>
-        <button
-          onClick={() => handleSkinTypeSelect("combination")}
-          className="p-3 rounded-lg bg-yellow-500 text-white hover:bg-yellow-600"
-        >
-          Combination Skin
-        </button>
+      <p className="text-lg text-center text-gray-600 mb-6">
+        Have questions about our products or need assistance? We're here to help!
+      </p>
+
+      <div className="contact-info mb-8 text-center">
+        <p className="text-gray-700 mb-2">
+         
+        </p>
+        <p className="text-gray-700 mb-2">
+          <strong>Email:</strong> support@cosmeticshop.com
+        </p>
+        <p className="text-gray-700">
+          <strong>Phone:</strong> +123 456 7890
+        </p>
       </div>
 
-      {/* Model Face Image */}
-      <div className="relative w-60 h-80 bg-white border-2 border-gray-300 rounded-lg flex items-center justify-center text-center mb-4 overflow-hidden">
-        <img src={isRoutineComplete ? modelFaceAfter : modelFaceBefore} alt="Model Face" className="w-full h-full object-cover transition-all duration-500" />
-      </div>
-
-      {/* Display Skincare Routine Based on Selected Skin Type */}
-      {selectedSkinType ? (
-        <div>
-          <h2 className="text-xl font-semibold mb-4">{selectedSkinType.charAt(0).toUpperCase() + selectedSkinType.slice(1)} Skin Routine</h2>
-          <div className="grid grid-cols-1 gap-4">
-            {skincareRoutines[selectedSkinType].map((step) => (
-              <button
-                key={step.id}
-                onClick={() => applyStep(step)}
-                className={`p-3 rounded-lg font-bold transition-all duration-300 ${appliedSteps.includes(step.effect) ? "bg-gray-400 text-white cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}
-                disabled={appliedSteps.includes(step.effect)}
-              >
-                {step.name} - {step.description}
-              </button>
-            ))}
-          </div>
+      <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
         </div>
-      ) : (
-        <p className="text-gray-500">Please select your skin type to start the routine!</p>
-      )}
+
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+            Subject (Optional)
+          </label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+            Your Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows="5"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          ></textarea>
+        </div>
+
+        <div className="text-center">
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
 
-export default SkincareGame;
+export default Contact;
