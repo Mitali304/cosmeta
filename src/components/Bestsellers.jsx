@@ -66,7 +66,7 @@ const Bestsellers = () => {
   ];
 
   return (
-    <div className=" py-1">
+    <div className="py-1">
       <div className="my-10">
         {/* Title Section */}
         <div className="text-center py-10">
@@ -99,14 +99,12 @@ const ProductCard = ({ product }) => {
     setLiked(!liked);
   };
 
-  const addToCart = () => {
+  const addToCart = (e) => {
+    e.preventDefault();
     alert(`${product.name} has been added to the cart!`);
 
     const currentCart = JSON.parse(localStorage.getItem("storeData")) || [];
-
-    const existingProductIndex = currentCart.findIndex(
-      (item) => item.id === product.id
-    );
+    const existingProductIndex = currentCart.findIndex((item) => item.id === product.id);
 
     if (existingProductIndex !== -1) {
       alert(`${product.name} is already in the cart!`);
@@ -117,13 +115,11 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <Link to={"/Cart"} style={{ textDecoration: "none" }}>
-      <div
-        style={{
-          ...styles.card,
-          ...(liked ? styles.cardLiked : styles.cardDefault),
-        }}
-      >
+    <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+      <div style={{
+        ...styles.card,
+        ...(liked ? styles.cardLiked : styles.cardDefault),
+      }}>
         {/* Heart Icon */}
         <div
           onClick={toggleLike}

@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/collection" element={<Collection searchQuery={searchQuery} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contect />} />
-        <Route path="/product/:ProductID" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/placeorder" element={<Placeorder />} />
