@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.tips-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: #d63384;
+  font-size: 26px;
+}
+
+/* Category Buttons */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.categories button {
+  background: #d63384;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.categories button:hover,
+.categories button.active {
+  background: #b0256f;
+}
+
+/* Tips List */
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tip Card */
+.tip-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.tip-card:hover {
+  transform: scale(1.02);
+}
+
+.tip-card h2 {
+  font-size: 18px;
+  color: #d63384;
+}
+
+.tip-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Category Label */
+.category-label {
+  display: inline-block;
+  background: #ffe0f0;
+  color: #d63384;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Comment Section */
+.comments-section {
+  margin-top: 10px;
+}
+
+.comments-section h4 {
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.comments-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comments-section li {
+  background: #f1f1f1;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comments-section input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.delete-comment-btn {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Ingredient Checker */
+.ingredient-checker {
+  text-align: center;
+  padding: 15px;
+  background: #fdf2f8;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-checker h2 {
+  font-size: 18px;
+  color: #b0256f;
+}
+
+.ingredient-checker input {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.ingredient-checker button {
+  background: #d63384;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.ingredient-checker button:hover {
+  background: #b0256f;
+}
+
+/* Ingredient Results */
+.ingredient-results h3 {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #d63384;
+}
+
+.ingredient-results ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredient-results li {
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.ingredient-results .red {
+  background: #ffdddd;
+  color: #b02525;
+}
+
+.ingredient-results .green {
+  background: #ddffdd;
+  color: #257b25;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categories button {
+    width: 80%;
+  }
+
+  .ingredient-checker input {
+    width: 90%;
+  }
+}

@@ -9,9 +9,9 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
   return (
     <div className="relative z-20">
       {/* Navigation Bar */}
-      <div className="flex items-center justify-between py-5 font-medium bg-white ">
+      <div className="flex items-center justify-between py-5 font-medium  ">
         <Link to="/">
-          <img src="/images/h2.png" className="w-36 h-18" alt="Logo" />
+          <img src="/images/download.png" className="w-36 h-18" alt="Logo" />
         </Link>
 
         {/* Desktop Menu */}
@@ -26,7 +26,7 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
             <p>ABOUT</p>
           </NavLink>
           <NavLink to="/Contact" className="flex flex-col items-center gap-1">
-            <p>CONTACT</p>
+            <p>BEAUTY INSIGHT</p>
           </NavLink>
           
         </ul>
