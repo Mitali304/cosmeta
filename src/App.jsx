@@ -17,6 +17,7 @@ import BodyCare from './components/BodyCare';
 import Fragrance from './components/Fragrance';
 import Mens from './components/Mens '; // Corrected path
 import Bestsellers from './components/Bestsellers';
+import Checkout from './pages/Checkout';
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/contact" element={<Contect />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
         <Route path="/placeorder" element={<Placeorder />} />
         <Route path="/orders" element={<Orders />} />
