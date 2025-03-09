@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
 
 const Checkout = () => {
   const navigate = useNavigate();
-
+  const [cartItems, setCartItems] = useState([]);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -21,6 +21,13 @@ const Checkout = () => {
     cvv: "",
   });
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("storeData"));
+    if (storedCart) {
+      setCartItems(storedCart);
+    }
+  }, []);
+
   const handleChange = (e) => {
     const { name, value, type } = e.target;
     setFormData((prev) => ({
@@ -35,7 +42,6 @@ const Checkout = () => {
       "country", "city", "address", "zip", "shipping", "paymentMethod"
     ];
 
-    // Validate required fields
     for (const field of requiredFields) {
       if (!formData[field]) {
         alert(`Please fill in ${field.replace(/([A-Z])/g, " $1")}.`);
@@ -43,7 +49,6 @@ const Checkout = () => {
       }
     }
 
-    // Validate credit card details if the payment method is Credit Card
     if (formData.paymentMethod === "Credit Card") {
       if (!formData.cardNumber || !formData.expiration || !formData.cvv) {
         alert("Please enter your credit card details.");
@@ -53,19 +58,44 @@ const Checkout = () => {
 
     alert("Order Placed Successfully!");
 
-    // Clear cart after successful checkout
-    localStorage.removeItem("cart");
+    localStorage.removeItem("storeData"); // Clear cart after checkout
+    setCartItems([]);
 
-    // Redirect to homepage after 1 second
     setTimeout(() => {
       navigate("/");
     }, 1000);
   };
 
+  const totalAmount = cartItems.reduce(
+    (total, item) => total + item.price * (item.quantity || 1),
+    0
+  );
+
   return (
     <div className="checkout-container">
       <div className="checkout-box">
         <h2>Checkout</h2>
+
+        {/* Your Order Section */}
+        <div className="section order-section">
+          <h3>Your Order</h3>
+          {cartItems.length === 0 ? (
+            <p className="empty-cart">Your cart is empty.</p>
+          ) : (
+            <ul className="order-items">
+              {cartItems.map((item) => (
+                <li key={item.id} className="order-item">
+                  <div className="order-item-details">
+                    <h4>{item.name}</h4>
+                    <p>₹{item.price} x {item.quantity || 1}</p>
+                    <p><strong>Total:</strong> ₹{item.price * (item.quantity || 1)}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+          <h3 className="order-total">Total: ₹{totalAmount}</h3>
+        </div>
 
         {/* Contact Information */}
         <div className="section">
@@ -89,21 +119,6 @@ const Checkout = () => {
           <input type="text" name="zip" placeholder="Zip/Postal Code" onChange={handleChange} required />
         </div>
 
-        {/* Delivery Options */}
-        <div className="section">
-          <h3>Delivery</h3>
-          <div className="radio-group">
-            <label>
-              <input type="radio" name="shipping" value="Standard" checked={formData.shipping === "Standard"} onChange={handleChange} />
-              <span className="custom-radio"></span> Standard Shipping (Free)
-            </label>
-            <label>
-              <input type="radio" name="shipping" value="Express" checked={formData.shipping === "Express"} onChange={handleChange} />
-              <span className="custom-radio"></span> Express Shipping ($10)
-            </label>
-          </div>
-        </div>
-
         {/* Payment Options */}
         <div className="section">
           <h3>Payment</h3>
@@ -113,10 +128,9 @@ const Checkout = () => {
               <span className="custom-radio"></span> Credit Card
             </label>
             <label>
-              <input type="radio" name="paymentMethod" value="Google Pay" checked={formData.paymentMethod === "Google Pay"} onChange={handleChange} />
-              <span className="custom-radio"></span> Cash On Delivery</label>
-            
-              
+              <input type="radio" name="paymentMethod" value="Cash On Delivery" checked={formData.paymentMethod === "Cash On Delivery"} onChange={handleChange} />
+              <span className="custom-radio"></span> Cash On Delivery
+            </label>
           </div>
 
           {formData.paymentMethod === "Credit Card" && (

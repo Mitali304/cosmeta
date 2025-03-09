@@ -161,7 +161,7 @@ const Tips = () => {
                   {(comments[tip.id] || []).map((comment, index) => (
                     <li key={index}>
                       {comment}{" "}
-                      <button onClick={() => deleteComment(tip.id, index)} className="delete-comment-btn">🗑️</button>
+                      <button onClick={() => deleteComment(tip.id, index)} className="delete-comment-btn">X</button>
                     </li>
                   ))}
                 </ul>

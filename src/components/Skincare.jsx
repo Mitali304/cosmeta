@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const categories = ["All", "Face Wash", "Serum", "Scrub", "Moisturizer", "Toner", "Face Pack","Sunscreen"];
 
 const Skincare = ({ searchQuery }) => {

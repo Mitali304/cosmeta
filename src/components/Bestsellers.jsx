@@ -69,14 +69,15 @@ const Bestsellers = () => {
       <div className="my-10">
         {/* Title Section */}
         <div className="text-center py-10">
-          <div style={styles.titleContainer}>
-            <div style={styles.line}></div>
-            <h2 className="prata-regular text-3xl font-semibold text-gray-800">
-              -- BESTSELLERS --
-            </h2>
-            <div style={styles.line}></div>
-          </div>
-        </div>
+  <div style={styles.titleContainer}>
+    <div style={styles.line}></div>
+    <h2 className="prata-regular text-3xl font-semibold text-gray-800 mx-2">
+      --BESTSELLERS--
+    </h2>
+    <div style={styles.line}></div>
+  </div>
+</div>
+
 
         {/* Product Cards */}
         <div style={styles.container}>
@@ -168,7 +169,8 @@ const styles = {
   line: {
     width: "300px",
     borderTop: "2px solid #4A4A4A",
-    margin: "0 15px",
+    margin: "0 0px",
+    marginBottom:"20px"
   },
   card: {
     position: "relative",

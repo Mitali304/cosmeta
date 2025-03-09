@@ -93,8 +93,8 @@ input:focus, textarea:focus, select:focus {
 
 /* Selected radio button effect */
 .radio-group input:checked + .custom-radio {
-  background-color: #e27d7a;
-  border: 2px solid #e27d7a;
+  background-color:  #d63384;
+  border: 2px solid   #d63384;
 }
 
 /* Card payment details */
@@ -107,7 +107,7 @@ input:focus, textarea:focus, select:focus {
   display: block;
   width: 100%;
   padding: 14px;
-  background: #e27d7a;
+  background:  #d63384;;
   color: white;
   border: none;
   border-radius: 5px;
@@ -120,7 +120,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .purchase-btn:hover {
-  background: #d16460;
+  background: #b0256f;
 }
 
 /* Responsive Design */
@@ -133,4 +133,52 @@ input:focus, textarea:focus, select:focus {
   .input-group {
     flex-direction: column;
   }
+}
+.order-section {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.order-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.order-item-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.order-item-details {
+  flex-grow: 1;
+}
+
+.order-item-details h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.order-item-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.order-total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
 }
