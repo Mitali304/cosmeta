@@ -1,74 +1,136 @@
-.checkout-page {
-    padding: 30px;
-    max-width: 450px;
-    margin: auto;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+/* Center the checkout page */
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #f5f5f5;
+}
+
+/* Checkout box styling */
+.checkout-box {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  width: 1200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2, h3 {
+  color: #444;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Form sections */
+.section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Input field styling */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #e27d7a;
+}
+
+/* Grouped input fields */
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Radio buttons styling */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+}
+
+/* Hide default radio button */
+.radio-group input {
+  display: none;
+}
+
+/* Custom square radio button */
+.custom-radio {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  background: white;
+  display: inline-block;
+  border-radius: 4px; /* Square shape */
+  transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Selected radio button effect */
+.radio-group input:checked + .custom-radio {
+  background-color: #e27d7a;
+  border: 2px solid #e27d7a;
+}
+
+/* Card payment details */
+.card-details {
+  margin-top: 10px;
+}
+
+/* Purchase button */
+.purchase-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: #e27d7a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 15px;
+  transition: background 0.3s ease-in-out;
+}
+
+.purchase-btn:hover {
+  background: #d16460;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .checkout-box {
+    width: 90%;
+    padding: 20px;
   }
-  
-  .checkout-page h2 {
-    text-align: center;
-    color: #d63384;
-    font-size: 24px;
-    margin-bottom: 20px;
+
+  .input-group {
+    flex-direction: column;
   }
-  
-  .checkout-page input,
-  .checkout-page textarea,
-  .checkout-page select {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    background: #f8f9fa;
-    transition: 0.3s;
-  }
-  
-  .checkout-page input:focus,
-  .checkout-page textarea:focus,
-  .checkout-page select:focus {
-    border-color: #d63384;
-    outline: none;
-    box-shadow: 0px 0px 5px rgba(214, 51, 132, 0.5);
-  }
-  
-  .checkout-page button {
-    width: 100%;
-    background: #d63384;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .checkout-page button:hover {
-    background: #b0256f;
-  }
-  
-  @media (max-width: 500px) {
-    .checkout-page {
-      padding: 20px;
-    }
-  
-    .checkout-page h2 {
-      font-size: 22px;
-    }
-  
-    .checkout-page input,
-    .checkout-page textarea,
-    .checkout-page select {
-      font-size: 14px;
-    }
-  
-    .checkout-page button {
-      font-size: 16px;
-    }
-  }
-  
+}

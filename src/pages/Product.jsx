@@ -7,9 +7,10 @@ const products = [
       id: 1, 
       name: "Etude Dear Darling Lip Oil Tint", 
       price: 599, 
+       code: "ETD-001",
       images: ["/images/bp1.jpg"], 
-      description: "A nourishing lip oil tint for long-lasting color.", 
-      ingredients: "Jojoba oil, Vitamin E, Shea Butter", 
+      description: "A nourishing lip oil tint for long-lasting color with a glossy finish.", 
+      ingredients: "Jojoba Oil, Vitamin E, Shea Butter, Argan Oil, Almond Oil, Hyaluronic Acid", 
       steps: "Apply directly to lips for a glossy tint." 
     },
     { 
